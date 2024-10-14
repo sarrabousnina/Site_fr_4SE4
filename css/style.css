@@ -33,14 +33,15 @@ a:focus {
     text-decoration: none;
 }
 .logo h1 {
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    text-overflow: ellipsis; /* Ajoute des points de suspension si nécessaire */
-    overflow: hidden; /* Cache le texte dépassant */
-    font-size: 12px; /* Réduit la taille de la police */
-    font-weight: 600; /* Optionnel : Ajuste l'épaisseur */
-    line-height: 1; /* Réduit l'espacement vertical */
-    letter-spacing: -0.5px; /* Réduit l'espacement entre les lettres */
-    margin: 0; /* Évite les marges inutiles */
+    white-space: normal; /* Allow the text to break onto multiple lines if necessary */
+    text-overflow: clip; /* Avoid cutting off the text with ellipsis */
+    overflow: visible; /* Ensure the full text is visible */
+    font-size: 24px; /* Increase the font size for better readability */
+    font-weight: 700; /* Make the text bold for emphasis */
+    line-height: 1.2; /* Adjust the line height for better spacing */
+    letter-spacing: 0; /* Use default letter spacing */
+    margin: 0; /* Remove unnecessary margins */
+    color: #d4af37; /* Optional: Add a color to make the logo stand out */
 }
 
 
@@ -101,9 +102,9 @@ a:focus {
 .top-bar .logo h1 {
     margin: 0;
     color: #aa9166;
-    font-size: 75px;
-    line-height: 55px;
-    font-weight: 800;
+    font-size: 65px;
+    line-height: 50px;
+    font-weight: 700;
 }
 
 .team-img img {
