@@ -106,6 +106,13 @@ a:focus {
     font-weight: 800;
 }
 
+.team-img img {
+    width: 100%;  /* Ajuste la largeur de l'image pour remplir son conteneur */
+    height: 200px; /* Définit une hauteur fixe pour toutes les images */
+    object-fit: cover; /* Permet de conserver le ratio d'aspect de l'image tout en remplissant l'espace défini */
+    border-radius: 10px; /* Arrondit les bords de l'image (facultatif) */
+}
+
 .top-bar .logo img {
     max-width: 100%;
     max-height: 60px;
