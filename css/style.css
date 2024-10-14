@@ -32,6 +32,18 @@ a:focus {
     outline: none;
     text-decoration: none;
 }
+.logo h1 {
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si nécessaire */
+    overflow: hidden; /* Cache le texte dépassant */
+    font-size: 12px; /* Réduit la taille de la police */
+    font-weight: 600; /* Optionnel : Ajuste l'épaisseur */
+    line-height: 1; /* Réduit l'espacement vertical */
+    letter-spacing: -0.5px; /* Réduit l'espacement entre les lettres */
+    margin: 0; /* Évite les marges inutiles */
+}
+
+
 
 .btn:focus {
     box-shadow: none;
