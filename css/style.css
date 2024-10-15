@@ -3,7 +3,7 @@
 /*******************************/
 body {
     color: #666666;
-    background: #ffffff;
+    background: #F5FFFA; /* Very soft green close to white */
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
@@ -28,10 +28,11 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #aa9166;
+    color: #AA9166; /* Keep gold color for links on hover */
     outline: none;
     text-decoration: none;
 }
+
 .logo h1 {
     white-space: normal; /* Allow the text to break onto multiple lines if necessary */
     text-overflow: clip; /* Avoid cutting off the text with ellipsis */
@@ -41,10 +42,8 @@ a:focus {
     line-height: 1.2; /* Adjust the line height for better spacing */
     letter-spacing: 0; /* Use default letter spacing */
     margin: 0; /* Remove unnecessary margins */
-    color: #d4af37; /* Optional: Add a color to make the logo stand out */
+    color: #AA9166; /* Keep gold color for logo */
 }
-
-
 
 .btn:focus {
     box-shadow: none;
@@ -55,13 +54,13 @@ a:focus {
     width: 100%;
     max-width: 1366px;
     margin: 0 auto;
-    background: #ffffff;
+    background: #F5FFFA; /* Match body background */
 }
 
 .back-to-top {
     position: fixed;
     display: none;
-    background: #aa9166;
+    background: #AA9166; /* Keep gold for back-to-top button */
     color: #121518;
     width: 44px;
     height: 44px;
@@ -75,14 +74,13 @@ a:focus {
 }
 
 .back-to-top:hover {
-    color: #aa9166;
-    background: #121518;
+    color: #AA9166; /* Keep gold on hover */
+    background: #121518; /* Keep dark on hover */
 }
 
 .back-to-top i {
     padding-top: 10px;
 }
-
 
 /**********************************/
 /********** Top Bar CSS ***********/
@@ -90,7 +88,7 @@ a:focus {
 .top-bar {
     position: relative;
     height: 90px;
-    background: #000000;
+    background: transparent; /* Make top bar transparent */
 }
 
 .top-bar .logo {
@@ -101,17 +99,17 @@ a:focus {
 
 .top-bar .logo h1 {
     margin: 0;
-    color: #aa9166;
+    color: #AA9166; /* Keep gold for logo */
     font-size: 65px;
     line-height: 50px;
     font-weight: 700;
 }
 
 .team-img img {
-    width: 100%;  /* Ajuste la largeur de l'image pour remplir son conteneur */
-    height: 200px; /* Définit une hauteur fixe pour toutes les images */
-    object-fit: cover; /* Permet de conserver le ratio d'aspect de l'image tout en remplissant l'espace défini */
-    border-radius: 10px; /* Arrondit les bords de l'image (facultatif) */
+    width: 100%;  /* Adjust the width of the image to fill its container */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Keep aspect ratio of the image while filling the defined space */
+    border-radius: 10px; /* Optionally round the corners of the image */
 }
 
 .top-bar .logo img {
@@ -137,7 +135,7 @@ a:focus {
 }
 
 .top-bar .text h2 {
-    color: #ffffff;
+    color: #AA9166; /* Keep white for text */
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -146,7 +144,7 @@ a:focus {
 }
 
 .top-bar .text p {
-    color: #ffffff;
+    color: #AA9166; /* Keep white for text */
     font-size: 13px;
     margin: 0;
 }
@@ -165,7 +163,7 @@ a:focus {
     width: 60px;
     height: 100%;
     font-size: 22px;
-    color: #ffffff;
+    color: #AA9166; /* Keep white for social icons */
     border-right: 1px solid rgba(255, 255, 255, .15);
 }
 
@@ -174,8 +172,8 @@ a:focus {
 }
 
 .top-bar .social a:hover {
-    color: #aa9166;
-    background: #ffffff;
+    color: #AA9166; /* Keep gold on hover */
+    background: #ffffff; /* Background white on hover */
 }
 
 @media (min-width: 992px) {
@@ -194,7 +192,6 @@ a:focus {
     }
 }
 
-
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
@@ -202,6 +199,7 @@ a:focus {
     position: relative;
     padding: 20px 0;
     transition: .3s;
+    background: #AA9166; /* Set the background color to gold */
 }
 
 .nav-bar.nav-sticky {
@@ -209,13 +207,18 @@ a:focus {
     top: 0;
     width: 100%;
     padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
     z-index: 999;
+    background: #AA9166; /* Ensure the sticky navbar retains the gold background */
 }
 
 .nav-bar .navbar {
     height: 100%;
     padding: 0;
+    background: transparent; /* Make sure the navbar background is transparent */
+}
+
+.navbar-dark {
+    background: transparent !important; /* Override Bootstrap's default dark background */
 }
 
 .navbar-dark .navbar-nav .nav-link,
@@ -223,12 +226,14 @@ a:focus {
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     padding: 10px 10px 8px 10px;
-    color: #ffffff;
+    color: #FFFFFF; /* Change link color to white for contrast */
+    font-weight: bold; /* Make the text bold */
+    font-size: 18px; /* Increase the font size for better readability */
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #aa9166;
+    color: #8B6B48; /* Slightly darker gold on hover */
     transition: none;
 }
 
@@ -236,17 +241,19 @@ a:focus {
     margin-top: 0;
     border: 0;
     border-radius: 0;
-    background: #f8f9fa;
+    background: #F5FFFA; /* Light green background for dropdown */
 }
 
 .nav-bar .btn {
-    color: #ffffff;
-    border: 2px solid #aa9166;
+    color: #FFFFFF; /* Change text color to white for contrast */
+    background: #AA9166; /* Set the background color to gold */
+    border: 2px solid #AA9166; /* Gold border for button */
     border-radius: 0;
 }
 
 .nav-bar .btn:hover {
-    background: #aa9166;
+    color: #AA9166; /* Change text color to gold on hover */
+    background: #F5FFFA; /* Set the hover background to light green */
 }
 
 @media (min-width: 992px) {
@@ -257,28 +264,13 @@ a:focus {
     .nav-bar.nav-sticky {
         padding: 10px 60px;
     }
-    
-    .nav-bar,
-    .nav-bar .navbar {
-        background: #121518 !important;
-    }
-    
-    .nav-bar .navbar-brand {
-        display: none;
-    }
-    
-    .nav-bar a.nav-link {
-        padding: 8px 15px;
-        font-size: 15px;
-        text-transform: uppercase;
-    }
 }
 
 @media (max-width: 991.98px) {   
     .nav-bar,
     .nav-bar .navbar {
         padding: 3px 0;
-        background: #121518 !important;
+        background: #AA9166; /* Ensure mobile navbar retains gold background */
     }
     
     .nav-bar a.nav-link {
@@ -293,7 +285,6 @@ a:focus {
         display: none;
     }
 }
-
 
 /*******************************/
 /******** Carousel CSS *********/
@@ -1665,8 +1656,8 @@ a:focus {
     position: relative;
     margin-top: 45px;
     padding-top: 180px;
-    background: #121518;
-    color: #ffffff;
+    background: #AA9166; /* Gold background */
+    color: #ffffff; /* White text for contrast */
 }
 
 .footer .footer-about,
@@ -1674,23 +1665,23 @@ a:focus {
 .footer .footer-contact {
     position: relative;
     margin-bottom: 45px;
-    color: #999999;
+    color: #ffffff; /* White text for footer sections */
 }
 
 .footer .footer-about h2,
 .footer .footer-link h2,
-.footer .footer-contact h2{
+.footer .footer-contact h2 {
     position: relative;
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 600;
-    color: #aa9166;
+    color: #F5FFFA; /* Very light green for headings to stand out against gold */
 }
 
 .footer .footer-link a {
     display: block;
     margin-bottom: 10px;
-    color: #999999;
+    color: #F5FFFA; /* Light green color for links */
     transition: .3s;
 }
 
@@ -1703,7 +1694,7 @@ a:focus {
 }
 
 .footer .footer-link a:hover {
-    color: #aa9166;
+    color: #ffffff; /* Change to white on hover */
     letter-spacing: 1px;
 }
 
@@ -1723,7 +1714,7 @@ a:focus {
 .footer .footer-social a i {
     margin-right: 15px;
     font-size: 18px;
-    color: #aa9166;
+    color: #F5FFFA; /* Light green for social icons */
 }
 
 .footer .footer-social a:last-child i {
@@ -1731,19 +1722,19 @@ a:focus {
 }
 
 .footer .footer-social a:hover i {
-    color: #999999;
+    color: #ffffff; /* Change to white on hover */
 }
 
 .footer .footer-menu .f-menu {
     position: relative;
     padding: 15px 0;
-    background: #000000;
+    background: transparent; /* Keep footer menu transparent */
     font-size: 0;
     text-align: center;
 }
 
 .footer .footer-menu .f-menu a {
-    color: #999999;
+    color: #F5FFFA; /* Light green for footer menu links */
     font-size: 16px;
     margin-right: 15px;
     padding-right: 15px;
@@ -1751,7 +1742,7 @@ a:focus {
 }
 
 .footer .footer-menu .f-menu a:hover {
-    color: #aa9166;
+    color: #ffffff; /* Change to white on hover */
 }
 
 .footer .footer-menu .f-menu a:last-child {
@@ -1760,14 +1751,14 @@ a:focus {
     border-right: none;
 }
 
-
 .footer .copyright {
     padding: 30px 15px;
+    background: #AA9166; /* Gold background for copyright section */
 }
 
 .footer .copyright p {
     margin: 0;
-    color: #999999;
+    color: #F5FFFA; /* Light green for copyright text */
 }
 
 .footer .copyright .col-md-6:last-child p {
@@ -1775,13 +1766,13 @@ a:focus {
 }
 
 .footer .copyright p a {
-    color: #aa9166;
+    color: #F5FFFA; /* Light green for copyright links */
     font-weight: 500;
     letter-spacing: 1px;
 }
 
 .footer .copyright p a:hover {
-    color: #ffffff;
+    color: #ffffff; /* Change to white on hover */
 }
 
 @media (max-width: 768px) {
