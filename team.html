@@ -1,202 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Cartes de Communauté Virtuelles</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Cartes de Communauté Virtuelles" name="description">
+<head>
+    <meta charset="utf-8">
+    <title>Cartes de Communauté Virtuelles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Cartes de Communauté Virtuelles" name="description">
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" type="image/png" href="img/logo4_fr.png">
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-        <!-- CSS Leaflet -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .description {
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
 
-        <style>
-            /* Style personnalisé pour la carte */
-            #map {
-                height: 500px;
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            .description {
-                margin: 20px 0;
-                font-size: 18px;
-                text-align: center;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="wrapper">
-            <div class="top-bar">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <h1>Horizons Infinis</h1>
-                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
-                                </a>
-                            </div>
+<body>
+    <div class="wrapper">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="logo">
+                            <a href="index.html">
+                                <h1>Horizons Infinis</h1>
+                            </a>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="top-bar-right">
-                                <div class="text">
-                                    <h2>8:00 - 18:00</h2>
-                                    <p>Heures d'ouverture Lun - Ven</p>
-                                </div>
-                                <div class="text">
-                                    <h2>+216 123 456</h2>
-                                    <p>Appelez-nous pour plus d'informations</p>
-                                </div>
-                                <div class="social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="top-bar-right">
+                            <div class="text">
+                                <h2>8:00 - 18:00</h2>
+                                <p>Heures d'ouverture Lun - Ven</p>
+                            </div>
+                            <div class="text">
+                                <h2>+216 24 444 444</h2>
+                                <p>Appelez-nous pour plus d'informations</p>
+                            </div>
+                            <div class="social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Top Bar End -->
-            
-                        <!-- Nav Bar Start -->
-                        <div class="nav-bar">
-                            <div class="container-fluid">
-                                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                                    <a href="#" class="navbar-brand">MENU</a>
-                                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-            
-                                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                                        <div class="navbar-nav mr-auto">
-                                            <a href="index.html" class="nav-item nav-link active">Accueil</a>
-                                            <a href="about.html" class="nav-item nav-link">À Propos</a>
-                                            <a href="service.html" class="nav-item nav-link">Services</a>
-                                            <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                                            <a href="portfolio.html" class="nav-item nav-link">Case Studies</a>
-                                            <div class="nav-item dropdown">
-                                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                                                <div class="dropdown-menu">
-                                                    <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                                    <a href="single.html" class="dropdown-item">Single Page</a>
-                                                </div>
-                                            </div>
-                                            <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <a class="btn" href="contact.html">Rejoignez-nous</a>
-                                        </div>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Nav Bar End -->
-                        
-
-            <!-- Description Start -->
-            <div class="container description">
-                <p>
-                    Cette carte interactive permet aux citoyens de signaler des problèmes dans leur quartier, 
-                    comme des routes en mauvais état ou des espaces verts manquants. Ces données peuvent être 
-                    utilisées pour prioriser les projets d'infrastructure et améliorer la qualité de vie.
-                </p>
-            </div>
-            <!-- Description End -->
-
-            <!-- Map Section Start -->
-            <div class="container">
-                <div id="map"></div>
-            </div>
-            <!-- Map Section End -->
-
-            <!-- Leaflet JS -->
-            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-            <script>
-                // Initialisation de la carte centrée sur l'emplacement spécifié
-                const map = L.map('map').setView([36.8538, 10.1680], 15); // Zoom à 15 pour un meilleur détail
-
-                // Chargement des tuiles OpenStreetMap
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-
-                // Ajout d'un marqueur à l'emplacement spécifié
-                const marker = L.marker([36.8538, 10.1680]).addTo(map)
-                    .bindPopup('1, 2 rue André Ampère<br>Pôle Technologique, El Ghazala')
-                    .openPopup();
-
-                // Ajout de marqueurs avec un clic
-                map.on('click', function(e) {
-                    L.marker(e.latlng).addTo(map)
-                        .bindPopup('Problème signalé ici')
-                        .openPopup();
-                });
-            </script>
-
-            <!-- Footer Start -->
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="footer-about">
-                                <h2>À Propos de Nous</h2>
-                                <p>
-                                    Horizons Infinis est une initiative qui aspire à un avenir durable, alliant innovation et humanité. Nous travaillons sur des solutions éducatives et écologiques pour transformer notre société.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-8">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="footer-link">
-                                        <h2>Domaines d'Action</h2>
-                                        <a href="#">Éducation</a>
-                                        <a href="#">Santé & Bien-être</a>
-                                        <a href="#">Changement Climatique</a>
-                                        <a href="#">Technologies Innovantes</a>
-                                        <a href="#">Villes Durables</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="footer-link">
-                                        <h2>Pages Utiles</h2>
-                                        <a href="#">À Propos</a>
-                                        <a href="#">Projets</a>
-                                        <a href="#">Équipe</a>
-                                        <a href="#">Études de Cas</a>
-                                        <a href="#">FAQs</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <div class="footer-contact">
-                                        <h2>Contactez-Nous</h2>
-                                        <p><i class="fa fa-map-marker-alt"></i>Technopole La Gazelle, Ariana, Tunisie</p>
-                                        <p><i class="fa fa-phone-alt"></i>+216 24 444 444</p>
-                                        <p><i class="fa fa-envelope"></i>contact@horizonsinfinis.tn</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
         </div>
-    </body>
+
+        <!-- Nav Bar -->
+        <div class="nav-bar">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="index.html" class="nav-item nav-link active">Accueil</a>
+                            <a href="about.html" class="nav-item nav-link">À Propos</a>
+                            <a href="service.html" class="nav-item nav-link">Services</a>
+                            <a href="team.html" class="nav-item nav-link">Réclamations Urbaines</a>
+                            <a href="portfolio.html" class="nav-item nav-link">Faire un Don</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <div class="ml-auto">
+                            <a class="btn" href="contact.html">Rejoignez-nous</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="container description">
+            <p>
+                Cette carte interactive permet aux citoyens de signaler des problèmes dans leur quartier, 
+                comme des routes en mauvais état ou des espaces verts manquants.
+            </p>
+        </div>
+
+        <!-- Map Section -->
+        <div class="container">
+            <div id="map"></div>
+        </div>
+
+        <!-- Modal Form -->
+        <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reportModalLabel">Signaler un problème</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="problem-type">Type de problème</label>
+                                <select class="form-control" id="problem-type">
+                                    <option>Nid de poule</option>
+                                    <option>Débris sur la route</option>
+                                    <option>Éclairage défectueux</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" id="description" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="photo">Joindre une photo</label>
+                                <input type="file" class="form-control-file" id="photo">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary">Soumettre</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="footer-about">
+                    <h2>À Propos de Nous</h2>
+                    <p>
+                        Horizons Infinis est une initiative qui aspire à un avenir durable, alliant innovation et humanité. Nous travaillons sur des solutions éducatives et écologiques pour transformer notre société.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-8">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-link">
+                            <h2>Domaines d'Action</h2>
+                            <a href="#">Éducation</a>
+                            <a href="#">Santé & Bien-être</a>
+                            <a href="#">Changement Climatique</a>
+                            <a href="#">Technologies Innovantes</a>
+                            <a href="#">Villes Durables</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-link">
+                            <h2>Pages Utiles</h2>
+                            <a href="#">À Propos</a>
+                            <a href="#">Projets</a>
+                            <a href="#">Équipe</a>
+                            <a href="#">Études de Cas</a>
+                            <a href="#">FAQs</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-contact">
+                            <h2>Contactez-Nous</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Technopole La Gazelle, Ariana, Tunisie</p>
+                            <p><i class="fa fa-phone-alt"></i>+216 24 444 444</p>
+                            <p><i class="fa fa-envelope"></i>contact@horizonsinfinis.tn</p>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-menu">
+            <div class="f-menu">
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Cookies</a>
+                <a href="#">Aide</a>
+                <a href="#">FAQs</a>
+            </div>
+        </div>
+        <div class="container copyright">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; <a href="https://horizonsinfinis.tn">Horizons Infinis</a>, Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Conçu par <a href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+        </div>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <!-- JS Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            // Initialisation de la carte
+            const map = L.map('map').setView([36.8538, 10.1680], 15);
+
+            // Style de carte personnalisé (Carte sombre)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Ajout de marqueurs fixes
+            const marker = L.marker([36.8538, 10.1680]).addTo(map)
+                .bindPopup('Pôle Technologique, El Ghazala')
+                .openPopup();
+
+            // Détection de localisation de l'utilisateur
+            map.locate({setView: true, maxZoom: 16});
+            map.on('locationfound', function(e) {
+                L.marker(e.latlng).addTo(map).bindPopup("Vous êtes ici").openPopup();
+            });
+
+            // Ajout de marqueurs via clic sur la carte
+            map.on('click', function(e) {
+                $('#reportModal').modal('show'); // Ouvre la fenêtre modale lors du clic
+                L.marker([e.latlng.lat, e.latlng.lng]).addTo(map).bindPopup('Signalement').openPopup();
+            });
+
+            // Calque pour travaux
+            const travauxLayer = L.layerGroup().addTo(map);
+            L.marker([36.8560, 10.1700]).addTo(travauxLayer).bindPopup('Travaux en cours ici.');
+        </script>
+    </div>
+</body>
 </html>
