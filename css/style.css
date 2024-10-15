@@ -197,10 +197,13 @@ a:focus {
 /**********************************/
 .nav-bar {
     position: relative;
-    padding: 20px 0;
+    width: 100%; /* Prendre toute la largeur de la page */
+    padding: 20px 0; /* Ajustez le padding selon vos besoins */
+    margin: 0; /* Supprimez les marges pour s'assurer qu'il n'y a pas d'espace autour */
     transition: .3s;
-    background: #AA9166; /* Set the background color to gold */
+    background: #AA9166; /* Couleur de fond */
 }
+
 
 .nav-bar.nav-sticky {
     position: fixed;
