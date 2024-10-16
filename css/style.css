@@ -287,66 +287,70 @@ a:focus {
 }
 
 /*******************************/
-/******** Carousel CSS *********/
-/*******************************/
-.carousel {
+.carousel-item {
     position: relative;
     width: 100%;
-    height: calc(100vh - 170px);
-    margin: 0 auto;
-    text-align: center;
+    height: calc(100vh - 170px); /* Adjusts to the desired height */
     overflow: hidden;
 }
 
-.carousel .carousel-inner,
-.carousel .carousel-item {
-    position: relative;
+/* Ensures the video fills the carousel without stretching */
+.carousel-video {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
-.carousel .carousel-item img {
+/* Image styling to maintain uniformity with the video */
+.carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.carousel .carousel-item::after {
+/* Dark overlay for better text visibility */
+.carousel-item::after {
     position: absolute;
     content: "";
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
-.carousel .carousel-caption {
+/* Centering captions */
+.carousel-caption {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: calc(100vh - 170px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%; /* Assure que le conteneur prend tout l’espace disponible */
+    padding: 0 15px; /* Ajoute un léger padding pour mobile */
+    z-index: 2;
 }
 
-.carousel .carousel-caption h1 {
-    color: #ffffff;
+
+/* Caption text styling */
+.carousel-caption h1 {
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.carousel .carousel-caption p {
-    color: #ffffff;
+.carousel-caption p {
     font-size: 25px;
     margin-bottom: 25px;
 }
 
-.carousel .carousel-caption .btn {
+/* Button styling */
+.carousel-caption .btn {
     padding: 15px 35px;
     font-size: 18px;
     font-weight: 500;
@@ -356,55 +360,45 @@ a:focus {
     background: #121518;
     border: 2px solid #aa9166;
     border-radius: 0;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.carousel .carousel-caption .btn:hover {
+.carousel-caption .btn:hover {
     color: #121518;
     background: #aa9166;
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 767.98px) {
-    .carousel .carousel-caption h1 {
+    .carousel-caption h1 {
         font-size: 40px;
-        font-weight: 700;
     }
-    
-    .carousel .carousel-caption p {
+    .carousel-caption p {
         font-size: 20px;
     }
-    
-    .carousel .carousel-caption .btn {
+    .carousel-caption .btn {
         padding: 12px 30px;
-        font-size: 18px;
-        font-weight: 500;
-        letter-spacing: 0;
     }
 }
 
 @media (max-width: 575.98px) {
-    .carousel .carousel-caption h1 {
+    .carousel-caption h1 {
         font-size: 30px;
-        font-weight: 500;
     }
-    
-    .carousel .carousel-caption p {
+    .carousel-caption p {
         font-size: 16px;
     }
-    
-    .carousel .carousel-caption .btn {
+    .carousel-caption .btn {
         padding: 10px 25px;
         font-size: 16px;
-        font-weight: 400;
-        letter-spacing: 0;
     }
 }
 
+/* Animation duration */
 .carousel .animated {
     -webkit-animation-duration: 1.5s;
     animation-duration: 1.5s;
 }
-
 
 /*******************************/
 /******* Page Header CSS *******/
